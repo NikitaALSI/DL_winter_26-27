@@ -1437,7 +1437,7 @@ $$
 <details>
 <summary>What is the gradient vector?</summary>
 
-The loss \(L\) is one scalar, but \(\hat{y}\) contains four predictions. Therefore, the derivative with respect to \(\hat{y}\) is a gradient containing four partial derivatives:
+The loss $L$ is one scalar, but $\hat{y}$ contains four predictions. Therefore, the derivative with respect to $\hat{y}$ is a gradient containing four partial derivatives:
 
 $$
 \nabla_{\hat{y}}L
@@ -1912,7 +1912,7 @@ Different thresholds can produce very different predictions from the exact same 
 
 Define **`apply_threshold`** in `dl_lib.metrics.functional`. Takes an array of probabilities and a threshold; returns a same-shaped array of `0`/`1` predictions, `1` where the probability is at or above the threshold.
 
-For probability \(p_i\) and threshold \(\tau\),
+For probability $p_i$ and threshold $\tau$,
 
 $$
 \hat{y}_i
