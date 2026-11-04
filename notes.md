@@ -2852,7 +2852,7 @@ Define the following functions in `dl_lib.losses.functional`:
 
   For each example, select the probability assigned to its true class, take its negative logarithm, and return the mean across the batch. Apply the same clipping before taking the logarithm.
 
-For binary labels \(y_i\in\{0,1\}\) and predicted probabilities \(p_i\), let
+For binary labels $y_i\in\{0,1\}$ and predicted probabilities $p_i$, let
 
 $$
 \tilde p_i=\operatorname{clip}(p_i,\varepsilon,1-\varepsilon).
@@ -2873,9 +2873,9 @@ $$
 
 For multiclass classification, let:
 
-- \(t_n\in\{0,\ldots,C-1\}\) be the integer index of the true class for example \(n\);
-- \(p_{n,c}\) be the predicted probability that example \(n\) belongs to class \(c\);
-- \(\tilde p_{n,c}\) be the clipped predicted probability.
+- $t_n\in\{0,\ldots,C-1\}$ be the integer index of the true class for example $n$;
+- $p_{n,c}$ be the predicted probability that example $n$ belongs to class $c$;
+- $\tilde p_{n,c}$ be the clipped predicted probability.
 
 The categorical cross-entropy is
 

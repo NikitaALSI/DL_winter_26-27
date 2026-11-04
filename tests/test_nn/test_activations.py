@@ -1,7 +1,6 @@
 import unittest
 
 import torch
-
 from dl_lib.nn.activations import LeakyReLU, ReLU, Sigmoid, Tanh
 
 

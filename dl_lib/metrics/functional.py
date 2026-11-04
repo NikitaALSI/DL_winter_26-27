@@ -14,7 +14,29 @@ def confusion_matrix(true: np.ndarray, pred: np.ndarray) -> dict:
     }
 
 def accuracy(true: np.ndarray, pred: np.ndarray):
-    return (true[true == 1].size + pred[pred == 1].size) / true.size
+    cf = confusion_matrix(true, pred)
+    try:
+        return (cf["tp"] + cf["tn"]) / (pred.size)
+    except ZeroDivisionError:
+        return 0
 
 def precision(true: np.ndarray, pred: np.ndarray):
-    return true[true == 1].size/(true[true == 1].size + true[true == 0].size)
+    cf = confusion_matrix(true, pred)
+    try:
+        return cf["tp"] / (cf["tp"] + cf["fp"])
+    except ZeroDivisionError:
+        return 0
+
+def recall(true: np.ndarray, pred: np.ndarray):
+    cf = confusion_matrix(true, pred)
+    try:
+        return cf["tp"] / (cf["tp"] + cf["fn"])
+    except ZeroDivisionError:
+        return 0
+
+def f1_score(true: np.ndarray, pred: np.ndarray):
+    cf = confusion_matrix(true, pred)
+    try:
+        return (2 * cf["tp"]) / (2 * cf["tp"] + cf["fp"] + cf["fn"])
+    except ZeroDivisionError:
+        return 0

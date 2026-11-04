@@ -1,7 +1,6 @@
 import unittest
 
 import torch
-
 from dl_lib.nn.activations import ReLU, Sigmoid, Tanh
 from dl_lib.nn.module import Module
 from dl_lib.nn.sequential import Sequential
